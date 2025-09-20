@@ -31,7 +31,7 @@ jobs:
 
       - name: Подставить токен
         run: |
-          sed -i "s/^token:.*/token: \"${TOKEN}\"/" config.yml
+          (Get-Content config.yml) -replace '^token:.*', "token: `"$env:TOKEN`"" | Set-Content config.yml
           
       - name: Сделать движок исполняемым
         run: chmod +x ./engines/lc0.exe

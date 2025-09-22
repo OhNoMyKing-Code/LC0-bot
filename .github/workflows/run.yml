@@ -40,3 +40,9 @@ jobs:
         run:  python user_interface.py "matchmaking"
         env: 
           PYTHONUTF8: 1
+          
+      - name: 🔁 Self-Restart
+        if: always()
+        run: gh workflow run bot.yml
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}

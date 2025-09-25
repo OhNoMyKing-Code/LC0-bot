@@ -45,4 +45,4 @@ jobs:
         if: always()
         run: gh workflow run bot.yml
         env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}

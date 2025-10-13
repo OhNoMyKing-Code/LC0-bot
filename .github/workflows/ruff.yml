@@ -29,6 +29,6 @@ jobs:
       run: |
         ruff format
     - name: Auto commit changes
-      uses: stefanzweifel/git-auto-commit-action@v6
+      uses: stefanzweifel/git-auto-commit-action@v7
       with:
         commit_message: Automatic ruff linting and formatting
